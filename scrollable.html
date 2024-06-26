@@ -29,5 +29,46 @@
     </div>
 </div>
 
+<style>
+    .scrollable-container {
+        width: 300px; /* Adjust as needed */
+        height: 200px; /* Adjust as needed */
+        overflow-y: hidden; /* Hide vertical scrollbar initially */
+        border: 1px solid #ccc; /* Optional: Add a border for clarity */
+    }
+
+    .scrollable-content {
+        padding: 10px; /* Optional: Add padding inside the scrollable area */
+        overflow-y: auto; /* Enable vertical scrollbar when content exceeds height */
+        max-height: 100%; /* Limit maximum height to the container's height */
+    }
+</style>
+</head>
+<body>
+
+<div class="scrollable-container">
+    <div class="scrollable-content">
+        <!-- Your content goes here -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+        <p>Donec sagittis urna felis, sit amet pulvinar nisl. Curabitur velit ante, feugiat ac arcu eu, varius dapibus nisi.</p>
+        <p>Integer accumsan libero vitae velit. Sed sed eros vel justo elementum faucibus quis a nunc. Proin vel libero vitae velit.</p>
+        <!-- Repeat as necessary -->
+    </div>
+</div>
+
+<script>
+    // Smooth scroll behavior
+    const scrollableContainer = document.querySelector('.scrollable-container');
+    scrollableContainer.addEventListener('wheel', (event) => {
+        if (event.deltaY !== 0) {
+            event.preventDefault();
+            scrollableContainer.scrollBy({
+                top: event.deltaY,
+                behavior: 'smooth'
+            });
+        }
+    });
+</script>
+    
 </body>
 </html>
